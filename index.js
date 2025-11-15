@@ -41,7 +41,7 @@ Quyidagi menyudan kerakli bo‘limni tanlang 👇
         },
       }
     );
-  } else if (text == "📚 Kurslar") {
+  } else if (text == "📚 Kurslar" || text == "⬅️ Orqaga") {
     bot.sendMessage(
       chatId,
       `
@@ -68,7 +68,7 @@ Quyidagi menyudan kerakli bo‘limni tanlang 👇
         },
       }
     );
-  } else if (text == "/location") {
+  } else if (text == "ℹ️ Markaz haqida") {
     // Example: O'quv markaz manzili (Tashkent)
     const latitude = 41.3781989;
     const longitude = 60.3694056;
@@ -88,10 +88,148 @@ Iltimos, quyidagi tugmani bosing 👇
   }
 });
 
+bot.on("callback_query", (query) => {
+  console.log(query);
+  const chatId = query.message.chat.id;
+  const data = query.data;
+
+  if (data == "course_english") {
+    bot.sendMessage(
+      chatId,
+      `
+    🇬🇧 Ingliz tili kursi haqida:
+
+📆 Davomiyligi: 3 oy  
+⏰ Darslar: Haftasiga 3 marta (1,5 soatdan)  
+👨‍🏫 O‘qituvchi: Tajribali filologlar  
+💰 Narxi: 350 000 so‘m / oy
+
+✍️ Agar sizni bu kurs qiziqtirsa, “Ro‘yxatdan o‘tish” tugmasini bosing.
+
+    `,
+      {
+        reply_markup: {
+          keyboard: [
+            [{ text: "✍️ Ro‘yxatdan o‘tish" }],
+            [{ text: "⬅️ Orqaga" }],
+          ],
+          resize_keyboard: true,
+        },
+      }
+    );
+  } else if (data == "course_russian") {
+    bot.sendMessage(chatId, `Russian`);
+  }
+
+  // bot.sendMessage(chatId, data);
+});
+bot.on("callback_query", (query) => {
+  console.log(query);
+  const chatId = query.message.chat.id;
+  const data = query.data;
+
+  if (data == "course_russian") {
+    bot.sendMessage(
+      chatId,
+      `
+     🇷🇺 Rus tili kursi haqida:
+
+📆 Davomiyligi: 3 oy  
+⏰ Darslar: Haftasiga 3 marta (1,5 soatdan)  
+👨‍🏫 O‘qituvchi: Tajribali filologlar  
+💰 Narxi: 250 000 so‘m / oy
+
+✍️ Agar sizni bu kurs qiziqtirsa, “Ro‘yxatdan o‘tish” tugmasini bosing.
+
+    `,
+      {
+        reply_markup: {
+          keyboard: [
+            [{ text: "✍️ Ro‘yxatdan o‘tish" }],
+            [{ text: "⬅️ Orqaga" }],
+          ],
+          resize_keyboard: true,
+        },
+      }
+    );
+  } else if (data == "course_russian") {
+    bot.sendMessage(chatId, `Russian`);
+  }
+
+  // bot.sendMessage(chatId, data);
+});
+
+bot.on("callback_query", (query) => {
+  console.log(query);
+  const chatId = query.message.chat.id;
+  const data = query.data;
+
+  if (data == "course_math") {
+    bot.sendMessage(
+      chatId,
+      `
+     🧮 Matematika kursi haqida:
+
+📆 Davomiyligi: 3 oy  
+⏰ Darslar: Haftasiga 3 marta (1,5 soatdan)  
+👨‍🏫 O‘qituvchi: Tajribali filologlar  
+💰 Narxi: 200 000 so‘m / oy
+
+✍️ Agar sizni bu kurs qiziqtirsa, “Ro‘yxatdan o‘tish” tugmasini bosing.
+
+    `,
+      {
+        reply_markup: {
+          keyboard: [
+            [{ text: "✍️ Ro‘yxatdan o‘tish" }],
+            [{ text: "⬅️ Orqaga" }],
+          ],
+          resize_keyboard: true,
+        },
+      }
+    );
+  } else if (data == "course_russian") {
+    bot.sendMessage(chatId, `Russian`);
+  }
+
+  // bot.sendMessage(chatId, data);
+});
+
+bot.on("callback_query", (query) => {
+  console.log(query);
+  const chatId = query.message.chat.id;
+  const data = query.data;
+
+  if (data == "course_programming") {
+    bot.sendMessage(
+      chatId,
+      `
+     💻 Dasturlash kursi haqida:
+
+📆 Davomiyligi: 3 oy  
+⏰ Darslar: Haftasiga 3 marta (1,5 soatdan)  
+👨‍🏫 O‘qituvchi: Tajribali filologlar  
+💰 Narxi: 380 000 so‘m / oy
+
+✍️ Agar sizni bu kurs qiziqtirsa, “Ro‘yxatdan o‘tish” tugmasini bosing.
+
+    `,
+      {
+        reply_markup: {
+          keyboard: [
+            [{ text: "✍️ Ro‘yxatdan o‘tish" }],
+            [{ text: "⬅️ Orqaga" }],
+          ],
+          resize_keyboard: true,
+        },
+      }
+    );
+  } else if (data == "course_russian") {
+    bot.sendMessage(chatId, `Russian`);
+  }
+
+  // bot.sendMessage(chatId, data);
+});
+
+
 console.log("Bot ishga tushdi...");
-
-
-
-
-
-console.log("bot ishga tushdi");
