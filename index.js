@@ -1,9 +1,20 @@
-const TelegramBot = require("node-telegram-bot-api");
-const TOKEN = "8117923609:AAHQIeFNaoBCw9cJGlkxh51y3xVLJkMbOZA"
+import TelegramBot from "node-telegram-bot-api";
+import mongoose from "mongoose";
+import {config} from "dotenv"
+config()
+
+const TOKEN = process.env.BOT_TOKEN;
 
 const bot = new TelegramBot(TOKEN, { polling: true });
 
 
+mongoose.connect(process.env.MONGO_URI).then(() => {
+  console.log(`DB is connected successfully!`);
+
+}).catch(() => {
+  console.log(`Error: db is not connected...`);
+
+})
 
 // Arrow function (strelkali funksiya)
 bot.on("message", (msg) => {

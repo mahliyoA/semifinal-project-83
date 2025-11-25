@@ -2,7 +2,7 @@
   "name": "semifinal-project-83",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
@@ -21,6 +21,8 @@
   "homepage": "https://github.com/mahliyoA/semifinal-project-83#readme",
   "description": "",
   "dependencies": {
+    "dotenv": "^17.2.3",
+    "mongoose": "^9.0.0",
     "node-telegram-bot-api": "^0.66.0"
   },
   "devDependencies": {
